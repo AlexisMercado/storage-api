@@ -4,6 +4,9 @@
   sus opiniones, comentarios, datos curiosos etc. del videojuego de su
   eleccion, creando asi una gran libreria con informacion de Videojuegos.
 
-§§Modo de uso
+## Rutas
 
-Ruta para la captura de datos
+|                |RUTA                          
+|----------------|-------------------------------|
+|Captura         |`/vg-info/capture`            |
+|Consulta        |`/vg-info/consulte`            |
