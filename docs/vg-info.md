@@ -19,6 +19,9 @@ titulo del *Videojuego*, *Su reseña*, *La calificacion*
 Las entidades que se tienen en mente para el proyecto son las
 siguientes:
 
--Videojuego (Nombre, Genero, plataformas, Codigo )
--Usuario (Nombre, apellido, edad, Nickname_id)
--Reseña (videojuego_codigo, Usuario_Nickname_id, opinion, calificacion)
+- Videojuego (Nombre, Genero, plataformas, Codigo )
+
+- Usuario (Nombre, apellido, edad, Nickname_id)
+
+- Reseña (videojuego_codigo, Usuario_Nickname_id, opinion, calificacion)
+ 
