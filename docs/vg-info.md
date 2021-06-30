@@ -8,7 +8,7 @@
 
 |                |RUTA                          
 |----------------|-------------------------------|
-|Captura         |`/vg-info/capture`            |
+|Captura         |`/vg-info/capture`             |
 |Consulta        |`/vg-info/consulte`            |
 
 Cualquier individuo podra acceder a la plataforma e inmediatamente llenar un
@@ -24,4 +24,25 @@ siguientes:
 - Usuario (Nombre, apellido, edad, Nickname_id)
 
 - Reseña (videojuego_codigo, Usuario_Nickname_id, opinion, calificacion)
- 
+
+## Operaciones de Almacenamiento de datos
+### Operaciones de Videojuegos
+
+**Registrar un Videojuego**
+- Solicitar el Nombre, Genero, plataformas
+- El codigo del juego se generara de forma automatica
+**Actualizacion del estatus del videojuego**
+- Eliminar videojuego
+
+### Operaciones de Usuario
+**Registrar un usuario**
+- Solicitar el nombre, apellido y edad
+- El usuario podra elegir so propio Nickname_id
+
+### Operaciones de Reseñas
+**Ingresar una reseña**
+- Se solicitara el Nickname_id del usuario que va a realizar la Reseña
+
+- Se solicitara ingresar el codigo del juego el cual se quiere reseñar
+
+- Se ingresaran la opinion del usuario sobre el videojuego y una calificacion del 1 al 10.
