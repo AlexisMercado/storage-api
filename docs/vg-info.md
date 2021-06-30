@@ -15,7 +15,7 @@ Cualquier individuo podra acceder a la plataforma e inmediatamente llenar un
 tipo formulario (que a su vez llenera un json) en el cual se capturara; el
 titulo del *Videojuego*, *Su reseña*, *La calificacion*
 
-##Entidades
+## Entidades
 Las entidades que se tienen en mente para el proyecto son las
 siguientes:
 
