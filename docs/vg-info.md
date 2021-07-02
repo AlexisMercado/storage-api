@@ -1,4 +1,4 @@
-# Videogames Info
+# VG Submits
 
   Este proyecto consiste en una plataforma donde los usuarios puedan compartir
   sus opiniones, comentarios, datos curiosos etc. del videojuego de su
