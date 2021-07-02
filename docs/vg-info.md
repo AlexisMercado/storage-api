@@ -6,7 +6,7 @@
 
 ## API
 
-| PATH               |                          
+|PATH               |                          
 |----------------|-------------------------------|
 |/vg-info/user/         |`informacion del usuario`               |
 |/vg-info/vg/  |`Informacion basica de un videojuego`             |
