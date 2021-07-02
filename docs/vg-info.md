@@ -6,12 +6,13 @@
 
 ## API
 
-
-|PATH                |                         
+|                |RUTA                          
 |----------------|-------------------------------|
 |/vg-info/user/         |`informacion del usuario`               |
 |/vg-info/vg/  |`Informacion basica de un videojuego`             |
 |/vg-info/review/  |`La informacion del videojuego junto con los datos aportados por el usuario`               |
+
+
 
 
 Cualquier individuo podra acceder a la plataforma e inmediatamente llenar un
