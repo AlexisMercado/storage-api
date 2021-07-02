@@ -4,12 +4,14 @@
   sus opiniones, comentarios, datos curiosos etc. del videojuego de su
   eleccion, creando asi una gran libreria con informacion de Videojuegos.
 
-## Rutas
+## API
 
-|                |RUTA                          
+
+|PATH            |                          
 |----------------|-------------------------------|
-|Captura         |`/vg-info/capture`             |
-|Consulta        |`/vg-info/consulte`            |
+|/vg-info/user/         |`informacion del usuario`             |
+|/vg-info/vg/        |`Informacion basica de un videojuego`            |
+|/vg-info/review/        |`La informacion del videojuego junto con los datos aportados por el usuari`            |
 
 Cualquier individuo podra acceder a la plataforma e inmediatamente llenar un
 tipo formulario (que a su vez llenera un json) en el cual se capturara; el
@@ -19,11 +21,11 @@ titulo del *Videojuego*, *Su reseña*, *La calificacion*
 Las entidades que se tienen en mente para el proyecto son las
 siguientes:
 
-- Videojuego (Nombre, Genero, plataformas, Codigo )
-
 - Usuario (Nombre, apellido, edad, Nickname_id)
 
-- Reseña (videojuego_codigo, Usuario_Nickname_id, opinion, calificacion)
+- Videojuego (Nombre, Genero, plataformas, Codigo )
+
+- Opinion (videojuego_codigo, Usuario_Nickname_id, opinion, calificacion)
 
 ## Operaciones de Almacenamiento de datos
 ### Operaciones de Videojuegos
