@@ -7,11 +7,12 @@
 ## API
 
 
-|PATH            |                          
+|PATH                |                         
 |----------------|-------------------------------|
-|/vg-info/user/         |`informacion del usuario`             |
-|/vg-info/vg/        |`Informacion basica de un videojuego`            |
-|/vg-info/review/        |`La informacion del videojuego junto con los datos aportados por el usuari`            |
+|/vg-info/user/         |`informacion del usuario`               |
+|/vg-info/vg/  |`Informacion basica de un videojuego`             |
+|/vg-info/review/  |`La informacion del videojuego junto con los datos aportados por el usuario`               |
+
 
 Cualquier individuo podra acceder a la plataforma e inmediatamente llenar un
 tipo formulario (que a su vez llenera un json) en el cual se capturara; el
