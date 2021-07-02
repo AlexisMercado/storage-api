@@ -15,9 +15,7 @@
 
 
 
-Cualquier individuo podra acceder a la plataforma e inmediatamente llenar un
-tipo formulario (que a su vez llenera un json) en el cual se capturara; el
-titulo del *Videojuego*, *Su reseña*, *La calificacion*
+
 
 ## Entidades
 Las entidades que se tienen en mente para el proyecto son las
@@ -27,7 +25,7 @@ siguientes:
 
 - Videojuego (Nombre, Genero, plataformas, Codigo )
 
-- Opinion (videojuego_codigo, Usuario_Nickname_id, opinion, calificacion)
+- Aporte (videojuego_codigo, Usuario_Nickname_id, Aporte, )
 
 ## Operaciones de Almacenamiento de datos
 ### Operaciones de Videojuegos
@@ -43,10 +41,10 @@ siguientes:
 - Solicitar el nombre, apellido y edad
 - El usuario podra elegir so propio Nickname_id
 
-### Operaciones de Reseñas
-**Ingresar una reseña**
-- Se solicitara el Nickname_id del usuario que va a realizar la Reseña
+### Operaciones de Aporte
+**Ingresar una aporte**
+- Se solicitara el Nickname_id del usuario que va a realizar un Aporte
 
-- Se solicitara ingresar el codigo del juego el cual se quiere reseñar
+- Se solicitara ingresar el codigo del juego al cual se quiere agregar un aporte
 
-- Se ingresaran la opinion del usuario sobre el videojuego y una calificacion del 1 al 10.
+- Se ingresaran el aporte del usuario sobre el videojuego.
