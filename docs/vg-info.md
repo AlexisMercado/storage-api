@@ -80,20 +80,22 @@ siguientes:
 
 ### Registro de usuario
 
-`{
+```
 
-  "Nombre": "Bill"
+     {
 
-  "apellido": "Williams"
+          "Nombre": "Bill"
 
-  "fecha_nac": "1998-01-08"
+          "apellido": "Williams"
 
-  "Nickname_id": "Bi11"
+          "fecha_nac": "1998-01-08"
 
-  "steam_id":    "Billpcma$ter"
+          "Nickname_id": "Bi11"
 
-  "XboxLive_id": "Billynator"
+          "steam_id":    "Billpcma$ter"
 
-  "PSN_id":      "Kid10"
+          "XboxLive_id": "Billynator"
 
-}`
+          "PSN_id":      "Kid10"
+
+    }
