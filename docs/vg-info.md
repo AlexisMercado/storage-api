@@ -78,10 +78,10 @@ siguientes:
 
 ## Estructura de solicitud y respuesta
 
-###Registro de usuario
+### Registro de usuario
 
-{
-  
+`{
+
   "Nombre": "Bill"
 
   "apellido": "Williams"
@@ -96,4 +96,4 @@ siguientes:
 
   "PSN_id":      "Kid10"
 
-}
+}`
