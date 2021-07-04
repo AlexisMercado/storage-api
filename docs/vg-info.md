@@ -10,15 +10,15 @@
 Las entidades que se tienen en mente para el proyecto son las
 siguientes:
 
-- Usuario (Nombre, apellido, edad, Nickname_id, steam_id, XboxLive_id, PSN_id)
+- Usuario (Nombre, apellido, fecha_nac, Nickname_id, steam_id, XboxLive_id, PSN_id)
 
 - Videojuego (Nombre, Genero, plataformas, VG_Id )
 
-- Cheats (vg_codigo, Usuario_Nickname_id, cheat, )
+- Cheats (vg_codigo, Usuario_Nickname_id, cheat, cheat_id )
 
-- Easter Egg (vg_codigo, Usuario_Nickname_id, Easter_Egg)
+- Easter Egg (vg_codigo, Usuario_Nickname_id, Easter_Egg, Easter_Egg_id)
 
-- Opinion (vg_codigo, Usuario_Nickname_id, Opinion, calificacion)
+- Opinion (vg_codigo, Usuario_Nickname_id, Opinion, calificacion, calificacion_id)
 
 
 
@@ -26,7 +26,7 @@ siguientes:
 
 |PATH                                     |                                                                  |
 |-----------------------------------------|------------------------------------------------------------------|
-|'POST /vg-info/addUser'                  |`Agregar usuario`                                                 |
+|POST /vg-info/addUser                    |`Agregar usuario`                                                 |
 |GET  /vg-info/addUser/<Nickname_id>      |`Consultar informacion del usuario`                               |
 |POST /vg-info/add                        |`Capturar toda la informacion de un Videojuego`                   |
 |GET  /vg-info/list                       |`Lista de videojuegos`                                            |
@@ -55,13 +55,36 @@ siguientes:
 
 ### Operaciones de Usuario
 **Registrar un usuario**
-- Solicitar el nombre, apellido y edad
-- El usuario podra elegir so propio Nickname_id
+- Solicitar el nombre, apellido y fecha de nacimiento.
+- El usuario podra elegir su propio Nickname_id
 
-### Operaciones de Aporte
-**Ingresar una aporte**
-- Se solicitara el Nickname_id del usuario que va a realizar un Aporte
+### Operaciones de cheats
+**Ingresar un cheat**
+- Se solicitara el vg_codigo del videojuego al que se agregara el Cheat y el Nickname_id del usuario que hara el aporte,
+  depues se describira el aporte.
+- El cheat_id se generara automaticamente.
 
-- Se solicitara ingresar el codigo del juego al cual se quiere agregar un aporte
+### Operaciones de Easter Eggs
+**Ingresar un Easter Egg**
+- Se solicitara el vg_codigo del videojuego al que se agregara el easter egg y el Nickname_id del usuario que hara el aporte,
+  depues se escribira el aporte.
+- El Easter_Egg_id se generara automaticamente.
 
-- Se ingresaran el aporte del usuario sobre el videojuego.
+### Operaciones de opiniones
+**Ingresar una opinion**
+- Se solicitara el vg_codigo del videojuego al que se agregara la opinion y el Nickname_id del usuario que hara el aporte,
+  depues se escribira el aporte.
+- El Easter_Egg_id se generara automaticamente.
+
+## Estructura de solicitud y respuesta
+###Registro de usuario
+
+{
+  "Nombre": "Bill"
+  "apellido": "Williams"
+  "fecha_nac": "1998-01-08"
+  "Nickname_id": "Bi11"
+  "steam_id":    "Billpcma$ter"
+  "XboxLive_id": "Billynator"
+  "PSN_id":      "Kid10"
+}
