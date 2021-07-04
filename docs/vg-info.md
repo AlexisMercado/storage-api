@@ -26,7 +26,7 @@ siguientes:
 
 |PATH                                     |                                                                  |
 |-----------------------------------------|------------------------------------------------------------------|
-|POST /vg-info/addUser                    |`Agregar usuario`                                                 |
+|'POST /vg-info/addUser'                  |`Agregar usuario`                                                 |
 |GET  /vg-info/addUser/<Nickname_id>      |`Consultar informacion del usuario`                               |
 |POST /vg-info/add                        |`Capturar toda la informacion de un Videojuego`                   |
 |GET  /vg-info/list                       |`Lista de videojuegos`                                            |
