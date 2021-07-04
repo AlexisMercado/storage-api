@@ -77,14 +77,23 @@ siguientes:
 - El Easter_Egg_id se generara automaticamente.
 
 ## Estructura de solicitud y respuesta
+
 ###Registro de usuario
 
 {
+  
   "Nombre": "Bill"
+
   "apellido": "Williams"
+
   "fecha_nac": "1998-01-08"
+
   "Nickname_id": "Bi11"
+
   "steam_id":    "Billpcma$ter"
+
   "XboxLive_id": "Billynator"
+
   "PSN_id":      "Kid10"
+
 }
