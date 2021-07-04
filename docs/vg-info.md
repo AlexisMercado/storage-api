@@ -4,35 +4,52 @@
   sus opiniones, comentarios, datos curiosos etc. del videojuego de su
   eleccion, creando asi una gran libreria con informacion de Videojuegos.
 
-## API
-
-|PATH               |                           |
-|----------------|-------------------------------|
-|/vg-info/user/         |`informacion del usuario`               |
-|/vg-info/vg/  |`Informacion basica de un videojuego`             |
-|/vg-info/review/  |`La informacion del videojuego junto con los datos aportados por el usuario`               |
-
-
-
-
 
 
 ## Entidades
 Las entidades que se tienen en mente para el proyecto son las
 siguientes:
 
-- Usuario (Nombre, apellido, edad, Nickname_id)
+- Usuario (Nombre, apellido, edad, Nickname_id, steam_id, XboxLive_id, PSN_id)
 
-- Videojuego (Nombre, Genero, plataformas, Codigo )
+- Videojuego (Nombre, Genero, plataformas, VG_Id )
 
-- Aporte (videojuego_codigo, Usuario_Nickname_id, Aporte, )
+- Cheats (vg_codigo, Usuario_Nickname_id, cheat, )
+
+- Easter Egg (vg_codigo, Usuario_Nickname_id, Easter_Egg)
+
+- Opinion (vg_codigo, Usuario_Nickname_id, Opinion, calificacion)
+
+
+
+## API
+
+|PATH                                     |                                                                  |
+|-----------------------------------------|------------------------------------------------------------------|
+|POST /vg-info/addUser                    |`Agregar usuario`                                                 |
+|GET  /vg-info/addUser/<Nickname_id>      |`Consultar informacion del usuario`                               |
+|POST /vg-info/add                        |`Capturar toda la informacion de un Videojuego`                   |
+|GET  /vg-info/list                       |`Lista de videojuegos`                                            |
+|GET  /vg-info/<vg_codigo>                |`Informacion de un Videojuego`                                    |
+|POST /vg-info/<vg_codigo>/Cheats         |`Registrar un cheat de un videojuego`                             |
+|GET  /vg-info/<vg_codigo>/Cheats         |`Mostrar todos los cheats registrados en un Videojuego`           |
+|POST /vg-info/<vg_codigo>/Easter_Egg     |`Registrar un cheat de un videojuego`                             |
+|GET  /vg-info/<vg_codigo>/Easter_Egg     |`Mostrar todos los cheats registrados en un Videojuego`           |
+|POST /vg-info/<vg_codigo>/Opinion        |`Registrar un cheat de un videojuego`                             |
+|GET  /vg-info/<vg_codigo>/Opinion        |`Mostrar todos los cheats registrados en un Videojuego`           |
+
+
+
+
+
 
 ## Operaciones de Almacenamiento de datos
 ### Operaciones de Videojuegos
 
 **Registrar un Videojuego**
-- Solicitar el Nombre, Genero, plataformas
+- Solicitar el Nombre, Genero y plaformas en las que esta disponible.
 - El codigo del juego se generara de forma automatica
+
 **Actualizacion del estatus del videojuego**
 - Eliminar videojuego
 
