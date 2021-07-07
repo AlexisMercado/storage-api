@@ -76,7 +76,7 @@ siguientes:
   depues se escribira el aporte.
 - El Easter_Egg_id se generara automaticamente.
 
-## Operaciones de Almacenamiento de datos
+## Operaciones de consulta de datos
 
 ### Solicitar datos de un usuario
 
