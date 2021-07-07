@@ -18,25 +18,25 @@ siguientes:
 
 - Easter Egg (vg_codigo, Usuario_Nickname_id, Easter_Egg, Easter_Egg_id)
 
-- Opinion (vg_codigo, Usuario_Nickname_id, Opinion, calificacion, calificacion_id)
+- Opinion (vg_codigo, Usuario_Nickname_id, Opinion, calificacion, opinion_id)
 
 
 
 ## API
 
-|PATH                                     |                                                                  |
+|PATH                                     | Descripcion                                                      |
 |-----------------------------------------|------------------------------------------------------------------|
-|POST /vg-info/addUser                    |`Agregar usuario`                                                 |
-|GET  /vg-info/addUser/<Nickname_id>      |`Consultar informacion del usuario`                               |
-|POST /vg-info/add                        |`Capturar toda la informacion de un Videojuego`                   |
-|GET  /vg-info/list                       |`Lista de videojuegos`                                            |
-|GET  /vg-info/<vg_codigo>                |`Informacion de un Videojuego`                                    |
-|POST /vg-info/<vg_codigo>/Cheats         |`Registrar un cheat de un videojuego`                             |
-|GET  /vg-info/<vg_codigo>/Cheats         |`Mostrar todos los cheats registrados en un Videojuego`           |
-|POST /vg-info/<vg_codigo>/Easter_Egg     |`Registrar un cheat de un videojuego`                             |
-|GET  /vg-info/<vg_codigo>/Easter_Egg     |`Mostrar todos los cheats registrados en un Videojuego`           |
-|POST /vg-info/<vg_codigo>/Opinion        |`Registrar un cheat de un videojuego`                             |
-|GET  /vg-info/<vg_codigo>/Opinion        |`Mostrar todos los cheats registrados en un Videojuego`           |
+| /vg-info/addUser                    |`Agregar usuario`                                                 |
+| /vg-info/addUser/<Nickname_id>      |`Consultar informacion del usuario`                               |
+| /vg-info/add                        |`Capturar toda la informacion de un Videojuego`                   |
+| /vg-info/list                       |`Lista de videojuegos`                                            |
+| /vg-info/<vg_codigo>                |`Informacion de un Videojuego`                                    |
+| /vg-info/<vg_codigo>/Cheats         |`Registrar un cheat de un videojuego`                             |
+| /vg-info/<vg_codigo>/Cheats         |`Mostrar todos los cheats registrados en un Videojuego`           |
+| /vg-info/<vg_codigo>/Easter_Egg     |`Registrar un cheat de un videojuego`                             |
+| /vg-info/<vg_codigo>/Easter_Egg     |`Mostrar todos los cheats registrados en un Videojuego`           |
+| /vg-info/<vg_codigo>/Opinion        |`Registrar un cheat de un videojuego`                             |
+| /vg-info/<vg_codigo>/Opinion        |`Mostrar todos los cheats registrados en un Videojuego`           |
 
 
 
@@ -99,3 +99,71 @@ siguientes:
           "PSN_id":      "Kid10"
 
     }
+```
+
+### Respuesta de registro de usuario exitosa
+
+```
+
+     {
+
+          "Nickname_id": "Bi11"
+    }
+```
+
+### Mensaje de fallo
+
+```
+
+     {
+
+          "Code": "500"
+          "mesagge": "Error al capturar Usuario"
+    }
+```
+### Implementacion de la ruta para los recursos
+
+
+`POST /vg-info/addUser`
+*Recibe una estructura de registro de Usuario*     
+*201, registra al ususario y regresa el Nickname_id*
+*D.O.M, regresa estructura de mensaje de fallo*
+
+`GET  /vg-info/addUser/<Nickname_id>`
+*200 regresa la informacion de un usuario*
+*D.O.M, regresa mensaje de fallo*
+
+`POST /vg-info/add`
+*Recibe una estructura de registro de un Videojuego*     
+*201, registra al ususario y regresa el vg_codigo*
+*D.O.M, regresa estructura de mensaje de fallo*     
+
+`GET  /vg-info/list`
+*200 regresa una lista de todos los Videojuegos en la aplicacion*
+*D.O.M, regresa mensaje de fallo*   
+
+`GET  /vg-info/<vg_codigo>`
+*201, regresa la informacion de un videojuego*
+*D.O.M, regresa mensaje de fallo*   
+
+`POST /vg-info/<vg_codigo>/Cheats/`
+*Recibe una estructura de registro de el cheat que el usuario quiera agregar*     
+*201, registra al ususario y regresa el cheat_id*
+*D.O.M, regresa estructura de mensaje de fallo*        
+`GET  /vg-info/<vg_codigo>/Cheats`
+*200 regresa una lista de todos los cheats de un juego en especifico*
+*D.O.M, regresa mensaje de fallo*          
+`POST /vg-info/<vg_codigo>/Easter_Egg`
+*Recibe una estructura de registro de el Easter_Egg que el usuario quiera agregar*     
+*201, registra al ususario y regresa el Easter_Egg_id*
+*D.O.M, regresa estructura de mensaje de fallo*       
+`GET  /vg-info/<vg_codigo>/Easter_Egg`
+*200 regresa una lista de todos los Easter Eggs de un juego en especifico*
+*D.O.M, regresa mensaje de fallo*  
+`POST /vg-info/<vg_codigo>/Opinion`
+*Recibe una estructura de registro de la Opinion que el usuario quiera agregar*     
+*201, registra al ususario y regresa la opinion_id*
+*D.O.M, regresa estructura de mensaje de fallo*
+`GET  /vg-info/<vg_codigo>/Opinion`
+*200 regresa una lista de todas las opiniones de un juego en especifico*
+*D.O.M, regresa mensaje de fallo*  
