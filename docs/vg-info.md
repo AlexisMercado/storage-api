@@ -76,9 +76,27 @@ siguientes:
   depues se escribira el aporte.
 - El Easter_Egg_id se generara automaticamente.
 
+## Operaciones de Almacenamiento de datos
+
+### Solicitar datos de un usuario
+
+- Su Nickname
+
+### Lista de juegos
+- Todos
+
+### Solicitar datos de un Videojuego
+
+- Su informacion basica
+- Con todos sus cheats
+- Con todos sus Easter eggs.
+- Con todas sus opiniones
+
 ## Estructura de solicitud y respuesta
 
 ### Registro de usuario
+
+
 
 ```
 
