@@ -1,8 +1,9 @@
 # VG Submits
 
   Este proyecto consiste en una plataforma donde los usuarios puedan compartir
-  sus opiniones, comentarios, datos curiosos etc. del videojuego de su
-  eleccion, creando asi una gran libreria con informacion de Videojuegos.
+  sus descubrimientos ya sean Easter Eggs o Cheats ademas de tener la oportunidad
+  de agragar su opinion de un Videojuego en especifico creando asi una gran libreria
+  con informacion de Videojuegos. Este proyecto esta enfocado 100% en el sector gamer.
 
 
 
@@ -139,7 +140,7 @@ siguientes:
           "mesagge": "Error al capturar Usuario"
     }
 ```
-### Implementacion de la ruta para los recursos
+### Interaccion con el servidor
 
 
 `POST /vg-info/addUser`
@@ -201,3 +202,35 @@ siguientes:
 
 *200 regresa una lista de todas las opiniones de un juego en especifico*
 *D.O.M, regresa mensaje de fallo*  
+
+-------------falta ejemplo curl-------------------------------------
+
+
+
+
+
+# Documento de Plan de Implementacion
+
+## Aspecto General
+
+### Descripcion general del problema a resolver
+Desde la creacion de los videojuegos siempre a existido una comunidad ansiosa
+por compartir sus opiniones, descubrimientos y experiencias de un videojuego.
+Este proyecto busca satisfacer esas necesidades de los gamers de hoy en dia,
+dentro de una comunidad con la misma pasion e interes por estos temas.
+
+La solucion especifica que plantea esta proyecto es el poder tener una
+plataforma donde los gamers puedan compartir y expresar sus descubrimientos
+y opiniones de sus videojuegos favoritos.
+
+**Recursos**
+Para la realizacion de este proyecto se necesitara de las habilidades de un talentoso
+programador web, con experiencia en http, base de datos etc. Adememas de contar
+con el equipo de computo adecuado para realizar multitareas sin ningun problema.
+
+**Una vez terminado**
+Ya que el proyecto este terminado y funcionando, el encargado de monitoriar
+y mantenerlos tendra distintas responsabilidades, como lo es el moderar a los usuarios
+y revisiar que todos los aportes a la plataforma sean legitimos y utiles.
+
+## Aspecto Tecnico
