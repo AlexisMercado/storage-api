@@ -390,11 +390,6 @@ Los usuarios esta autorizados de realizar aportes como los son Cheats, easter eg
 ('app:Opinion:read:all', 'app:Opinion:write:self)
 
 
--------------falta ejemplo curl-------------------------------------
-
-
-
-
 
 # Documento de Plan de Implementacion
 
@@ -422,6 +417,22 @@ y mantenerlos tendra distintas responsabilidades, como lo es el moderar a los us
 y revisiar que todos los aportes a la plataforma sean legitimos y utiles.
 
 ## Aspecto Tecnico
+
+### Modulos de codigos necesarios
+
+De entro de estos modulos se encuentra uno de los mas importantes y mas comentados en este documento que
+son las **rutas** ya que son las encargadas de la navegacion de los datos entra las entidades y sin unas rutas bien definidas el programa puede tener un sin fin de errores.
+
+Otro aspecto importante son las funcion es de almacenamiento puesto que la idea principal del proyecto gira entorno a aguardar y consultar datos. Ademas es importante mencionar las funcionalidades del API que consiste en agregar Videojuegos, cheats, easter eggs etc.
+
+### Plan para la codificacion de los Modulos
+
+Antes de empezar a programar es importante tener un esquema de como estara organizado todo, en este caso los Mock-ups seran de gran ayuda. Una vez teniendo las vistas, se puede empezar a planificar la codificacion.
+
+### Plan para la verificacion de la calidad del producto
+
+Antes de terminar el proyecto debemos de tener planeado ciertos parametros a cumplir con respecto a la funcionalidad. Este plan consistira en el monitoreo regular de plataforma y asegurarse de su correcto funcionamiento como uso de parte de los usuarios.
+
 
 
 ## Computo en la Nube
@@ -460,7 +471,6 @@ Crear en su carpeta de modulos funciones que emulen las interacciones con el alm
 |----------------|-------------------------------|
 |**Creacion de modules/VG-info.py:**  |`7b92f18209ea32988fdeafe33956d3bf1bd440fe`    |
 
-**Creacion de models/VG-info.py:**
 
 
 ## Mock-Ups
