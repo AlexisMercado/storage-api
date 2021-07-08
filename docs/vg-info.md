@@ -456,7 +456,7 @@ Crear en su carpeta de modulos funciones que emulen las interacciones con el alm
 - Entregable, señalar el commit-hash que contiene la codificacion de estas funciones asistentes.
 
 
-|                |RUTA                          
+| Descripcion               |Commit hash                          
 |----------------|-------------------------------|
 |**Creacion de modules/VG-info.py:**  |`7b92f18209ea32988fdeafe33956d3bf1bd440fe`    |
 
@@ -469,4 +469,8 @@ La imagen `vg-info-0001-videogames_list.PNG` muestra el listado de juegos regist
 
 La imagen `vg-info-0002-Videogame_menu.PNG` Muestra el menu una vez seleccionado el juego, este meno tendra una combo box que nos dejara elegir el tipo de aportes que queremos consultar ya sea cheat, easter egg o opiniones, ademas de que en la parte baja se puede ver el voton que te dejara realizar el aporte dependiendo la informacion que estes consultando.
 
-La imagen  `vg-info-0003-videogamesa_addcheat` no muestra un recuadro para ingresar el texto que en este caso seria un cheat.
+La imagen  `vg-info-0003-videogamesa_addcheat.PNG` no muestra un recuadro para ingresar el texto que en este caso seria un cheat.
+
+| Descripcion               |Commit Hash                          
+|----------------|-------------------------------|
+|**Mock-Ups y sus descriciones**  |`3038ef66dba9ead18e22aeb762e9c5ccdff2e4e3`    |
