@@ -13,11 +13,11 @@ siguientes:
 
 - Usuario (Nombre, apellido, fecha_nac, Nickname_id, steam_id, XboxLive_id, PSN_id)
 
-- Videojuego (Nombre, Genero, plataformas, VG_Id )
+- Videojuego (Nombre, Genero, plataformas, vg_codigo )
 
 - Cheats (vg_codigo, Usuario_Nickname_id, cheat, cheat_id )
 
-- Easter Egg (vg_codigo, Usuario_Nickname_id, Easter_Egg, Easter_Egg_id)
+- EasterEgg (vg_codigo, Usuario_Nickname_id, Easter_Egg, Easter_Egg_id)
 
 - Opinion (vg_codigo, Usuario_Nickname_id, Opinion, calificacion, opinion_id)
 
@@ -103,24 +103,24 @@ siguientes:
 
      {
 
-          "Nombre": "Bill"
+          "Nombre": "Bill",
 
-          "apellido": "Williams"
+          "apellido": "Williams",
 
-          "fecha_nac": "1998-01-08"
+          "fecha_nac": "1998-01-08",
 
-          "Nickname_id": "Bi11"
+          "Nickname_id": "Bi11",
 
-          "steam_id":    "Billpcma$ter"
+          "steam_id":    "Billpcma$ter",
 
-          "XboxLive_id": "Billynator"
+          "XboxLive_id": "Billynator",
 
           "PSN_id":      "Kid10"
 
     }
 ```
 
-### Respuesta de registro de usuario exitosa
+#### Respuesta de registro de usuario exitosa
 
 ```
 
@@ -130,16 +130,192 @@ siguientes:
     }
 ```
 
-### Mensaje de fallo
+#### Mensaje de fallo
 
 ```
 
      {
 
-          "Code": "500"
+          "Code": "500",
           "mesagge": "Error al capturar Usuario"
     }
 ```
+
+
+### Registro de Videojuego
+
+
+
+```
+
+     {
+
+          "Nombre": "Fifa 2021"
+
+          "Genero": "Deportes"
+
+          "Plataforma": "PS4"
+
+
+    }
+
+```
+
+#### Mensaje de registro de videojuego exitoso
+
+```
+
+     {
+
+          "vg_codigo": "VG001"
+    }
+```
+
+
+#### Mensaje de fallo
+
+```
+
+     {
+
+          "Code": "500",
+          "mesagge": "Error al capturar el videojuego"
+    }
+```
+
+
+### Registro de un cheat
+
+
+
+```
+
+     {
+
+          "vg_codigo": "VG001"
+
+          "Usuario_Nickname_id": "Bi11"
+
+          "Cheat": "Cuando vayas perdiendo en un partido solo pon pausa y cambiate al otro equipo para anotar unos autogoles y luego regresas a tu equipo."
+
+
+    }
+
+```
+
+#### Mensaje de registro de Cheat exitoso
+
+```
+
+     {
+
+          "cheat_id": "CH001"
+    }
+```
+#### Mensaje de fallo
+
+```
+
+     {
+
+          "Code": "500",
+          "mesagge": "Error al capturar el cheat"
+    }
+```
+
+
+
+### Registro de un Easter egg.
+
+
+
+```
+
+     {
+
+          "vg_codigo": "VG001"
+
+          "Usuario_Nickname_id": "Bi11"
+
+          "Easter_Egg": "Aquir va un easter egg bien interesante"
+
+
+    }
+
+```
+
+#### Mensaje de registro de Easter egg exitoso
+
+```
+
+     {
+
+          "cheat_id": "EA001"
+    }
+```
+
+#### Mensaje de fallo
+
+
+```
+
+     {
+
+          "Code": "500",
+          "mesagge": "Error al capturar el Easter egg"
+    }
+```
+
+
+### Registro de una opinion.
+
+
+
+```
+
+     {
+
+          "vg_codigo": "VG001",
+
+          "Usuario_Nickname_id": "Bi11",
+
+          "opinion": "Es exactamente igual al anterior lo cual es perfecto",
+
+          "calificacion": "10"
+
+
+
+    }
+
+```
+
+#### Mensaje de registro de una opinion exitoso
+
+```
+
+     {
+
+          "cheat_id": "O001"
+    }
+```
+
+#### Mensaje de fallo
+
+
+```
+
+     {
+
+          "Code": "500",
+          "mesagge": "Error al capturar la opinion"
+    }
+```
+
+
+
+
+
+
 ### Interaccion con el servidor
 
 
@@ -202,6 +378,15 @@ siguientes:
 
 *200 regresa una lista de todas las opiniones de un juego en especifico*
 *D.O.M, regresa mensaje de fallo*  
+
+## Autenticacion y autorizacion de usuarios
+
+Los usuarios esta autorizados de realizar aportes como los son Cheats, easter eggs y opiniones y editar unicamente los aportes que sean propios.
+
+('app:cheats:read:all', 'app:Cheats:write:self)
+('app:Easter_Egg:read:all', 'app:Easter_Egg:write:self)
+('app:Opinion:read:all', 'app:Opinion:write:self)
+
 
 -------------falta ejemplo curl-------------------------------------
 
