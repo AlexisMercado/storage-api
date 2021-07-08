@@ -439,11 +439,25 @@ Crear los archivos correspondientes a su proyecto, y someterlos a control de ver
 - Entregable, señalar el commit-hash que contiene la creación de dichos archivos.–Archivos en./docs,./routes,./modules,./models, nombrados con el slug de su proyecto.
 - NOTA: dentro de docs son archivos tipo markdown (.md), y dentro de las demás son archivos tipo python(.py)
 
-**Creacion de docs/vg-info.md:**   `9104973e4fbeed90718214f2fbda302d73250b8a`
+|Descripcion                |Commit hash                          
+|----------------|-------------------------------|
+|**Creacion de docs/vg-info.md:**    |`9104973e4fbeed90718214f2fbda302d73250b8a` |   
 
 
-**Creacion de routes/VG-info.py:**  `6811f51b316950d7dd71c6e7822d9dea34f547d9`
+Crear todas las rutas especificadas en su archivo de documentación dentro de su archivo en la carpeta routes, y todas deben de responder 501, con Content-Type: application/json, y un cuerpo de respuesta en formato json con 2 llaves,code y message, el message debe contener el mensaje, Not Implemented.
+- Entregable,señalarelcommit-hashque contiene la codificacion de las rutas.
 
-**Creacion de modules/VG-info.py:** `7b92f18209ea32988fdeafe33956d3bf1bd440fe`
+|Descripcion                |Commit hash                          
+|----------------|-------------------------------|
+|**Creacion de routes/VG-info.py:**    |`6811f51b316950d7dd71c6e7822d9dea34f547d9` |    
+
+Crear en su carpeta de modulos funciones que emulen las interacciones con el almacén de archivos o datos, es decir que si necesitas una función de consulta, crear una función que retorne una consulta simulada con datos codificados como constantes, y si necesitas crear objetos funciones que retornen simulando una creación exitosa.
+
+- Entregable,señalar el commit-hash que contiene la codificacion de estas funciones asistentes.
+
+
+|                |RUTA                          
+|----------------|-------------------------------|
+|**Creacion de modules/VG-info.py:**  |`7b92f18209ea32988fdeafe33956d3bf1bd440fe`    |
 
 **Creacion de models/VG-info.py:**
