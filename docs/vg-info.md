@@ -427,9 +427,18 @@ y revisiar que todos los aportes a la plataforma sean legitimos y utiles.
 ## Computo en la Nube
 
 ### Crear unfork del proyectostorage-api
+
+Crear unfork del proyectostorage-api
+- **Entregable**,señalar cual es elcommit-hash, apartir del que ustedes realizaron el fork.
+
 **Creacion del Fork:** 9104973e4fbeed90718214f2fbda302d73250b8a
 
+Crear los archivos correspondientes a su proyecto, y someterlos a control de versiones
+- Entregable,señalar elcommit-hashque contiene la creación de dichos archivos.–Archivos en./docs,./routes,./modules,./models, nombrados con elslugde su proyecto.
+- NOTA: dentro de docs son archivos tipo markdown (.md), y dentro de las demás son archivos tipo python(.py)
+
 **Creacion de docs/vg-info.md** 9104973e4fbeed90718214f2fbda302d73250b8a
+
 
 **Creacion de routes/VG-info.py:** 6811f51b316950d7dd71c6e7822d9dea34f547d9
 
