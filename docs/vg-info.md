@@ -429,7 +429,9 @@ y revisiar que todos los aportes a la plataforma sean legitimos y utiles.
 ### Crear unfork del proyectostorage-api
 **Creacion del Fork:** 9104973e4fbeed90718214f2fbda302d73250b8a
 
-**Creacion de routes/VG-info.py:**
+**Creacion de docs/vg-info.md** 9104973e4fbeed90718214f2fbda302d73250b8a
+
+**Creacion de routes/VG-info.py:** 6811f51b316950d7dd71c6e7822d9dea34f547d9
 
 **Creacion de modules/VG-info.py:**
 
