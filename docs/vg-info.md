@@ -321,70 +321,72 @@ siguientes:
 
 `POST /vg-info/addUser`
 
-*Recibe una estructura de registro de Usuario*     
-*201, registra al ususario y regresa el Nickname_id*
-*D.O.M, regresa estructura de mensaje de fallo*
+Recibe una estructura de registro de Usuario     
+201, registra al ususario y regresa el Nickname_id
+D.O.M, regresa estructura de mensaje de fallo
 
 `GET  /vg-info/addUser/<Nickname_id>`
 
-*200 regresa la informacion de un usuario*
-*D.O.M, regresa mensaje de fallo*
+200 regresa la informacion de un usuario
+D.O.M, regresa mensaje de fallo
 
 `POST /vg-info/add`
 
-*Recibe una estructura de registro de un Videojuego*     
-*201, registra al ususario y regresa el vg_codigo*
-*D.O.M, regresa estructura de mensaje de fallo*     
+Recibe una estructura de registro de un Videojuego     
+201, registra al ususario y regresa el vg_codigo
+D.O.M, regresa estructura de mensaje de fallo     
 
 `GET  /vg-info/list`
 
-*200 regresa una lista de todos los Videojuegos en la aplicacion*
-*D.O.M, regresa mensaje de fallo*   
+200 regresa una lista de todos los Videojuegos en la aplicacion
+D.O.M, regresa mensaje de fallo   
 
 `GET  /vg-info/<vg_codigo>`
 
-*201, regresa la informacion de un videojuego*
-*D.O.M, regresa mensaje de fallo*   
+201, regresa la informacion de un videojuego
+D.O.M, regresa mensaje de fallo   
 
 `POST /vg-info/<vg_codigo>/Cheats/`
 
-*Recibe una estructura de registro de el cheat que el usuario quiera agregar*     
-*201, registra al ususario y regresa el cheat_id*
-*D.O.M, regresa estructura de mensaje de fallo*  
+Recibe una estructura de registro de el cheat que el usuario quiera agregar     
+201, registra al ususario y regresa el cheat_id
+D.O.M, regresa estructura de mensaje de fallo  
 
 `GET  /vg-info/<vg_codigo>/Cheats`
 
-*200 regresa una lista de todos los cheats de un juego en especifico*
-*D.O.M, regresa mensaje de fallo*      
+200 regresa una lista de todos los cheats de un juego en especifico
+D.O.M, regresa mensaje de fallo      
 
 `POST /vg-info/<vg_codigo>/Easter_Egg`
 
-*Recibe una estructura de registro de el Easter_Egg que el usuario quiera agregar*     
-*201, registra al ususario y regresa el Easter_Egg_id*
-*D.O.M, regresa estructura de mensaje de fallo*
+Recibe una estructura de registro de el Easter_Egg que el usuario quiera agregar    
+201, registra al ususario y regresa el Easter_Egg_id
+D.O.M, regresa estructura de mensaje de fallo
 
 `GET  /vg-info/<vg_codigo>/Easter_Egg`
 
-*200 regresa una lista de todos los Easter Eggs de un juego en especifico*
-*D.O.M, regresa mensaje de fallo*  
+200 regresa una lista de todos los Easter Eggs de un juego en especifico
+D.O.M, regresa mensaje de fallo  
 
 `POST /vg-info/<vg_codigo>/Opinion`
 
-*Recibe una estructura de registro de la Opinion que el usuario quiera agregar*     
-*201, registra al ususario y regresa la opinion_id*
-*D.O.M, regresa estructura de mensaje de fallo*
+Recibe una estructura de registro de la Opinion que el usuario quiera agregar     
+201, registra al ususario y regresa la opinion_id
+D.O.M, regresa estructura de mensaje de fallo
 
 `GET  /vg-info/<vg_codigo>/Opinion`
 
-*200 regresa una lista de todas las opiniones de un juego en especifico*
-*D.O.M, regresa mensaje de fallo*  
+200 regresa una lista de todas las opiniones de un juego en especifico
+D.O.M, regresa mensaje de fallo  
 
 ## Autenticacion y autorizacion de usuarios
 
 Los usuarios esta autorizados de realizar aportes como los son Cheats, easter eggs y opiniones y editar unicamente los aportes que sean propios.
 
 ('app:cheats:read:all', 'app:Cheats:write:self)
+
 ('app:Easter_Egg:read:all', 'app:Easter_Egg:write:self)
+
 ('app:Opinion:read:all', 'app:Opinion:write:self)
 
 
@@ -398,7 +400,6 @@ Los usuarios esta autorizados de realizar aportes como los son Cheats, easter eg
 
 ## Aspecto General
 
-### Descripcion general del problema a resolver
 Desde la creacion de los videojuegos siempre a existido una comunidad ansiosa
 por compartir sus opiniones, descubrimientos y experiencias de un videojuego.
 Este proyecto busca satisfacer esas necesidades de los gamers de hoy en dia,
@@ -409,11 +410,13 @@ plataforma donde los gamers puedan compartir y expresar sus descubrimientos
 y opiniones de sus videojuegos favoritos.
 
 **Recursos**
+
 Para la realizacion de este proyecto se necesitara de las habilidades de un talentoso
 programador web, con experiencia en http, base de datos etc. Adememas de contar
 con el equipo de computo adecuado para realizar multitareas sin ningun problema.
 
 **Una vez terminado**
+
 Ya que el proyecto este terminado y funcionando, el encargado de monitoriar
 y mantenerlos tendra distintas responsabilidades, como lo es el moderar a los usuarios
 y revisiar que todos los aportes a la plataforma sean legitimos y utiles.
