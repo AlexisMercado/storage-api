@@ -422,3 +422,15 @@ y mantenerlos tendra distintas responsabilidades, como lo es el moderar a los us
 y revisiar que todos los aportes a la plataforma sean legitimos y utiles.
 
 ## Aspecto Tecnico
+
+
+## Computo en la Nube
+
+### Crear unfork del proyectostorage-api
+**Creacion del Fork:** 9104973e4fbeed90718214f2fbda302d73250b8a
+
+**Creacion de routes/VG-info.py:**
+
+**Creacion de modules/VG-info.py:**
+
+**Creacion de models/VG-info.py:**
