@@ -481,7 +481,11 @@ La imagen `vg-info-0001-videogames_list.PNG` muestra el listado de juegos regist
 
 La imagen `vg-info-0002-Videogame_menu.PNG` Muestra el menu una vez seleccionado el juego, este meno tendra una combo box que nos dejara elegir el tipo de aportes que queremos consultar ya sea cheat, easter egg o opiniones, ademas de que en la parte baja se puede ver el voton que te dejara realizar el aporte dependiendo la informacion que estes consultando.
 
+![Image text](https://github.com/AlexisMercado/storage-api/blob/master/docs/assets/vg-info-0002-Videogame_menu.PNG)
+
 La imagen  `vg-info-0003-videogamesa_addcheat.PNG` no muestra un recuadro para ingresar el texto que en este caso seria un cheat.
+
+![Image text](https://github.com/AlexisMercado/storage-api/blob/master/docs/assets/vg-info-0003-videogamesa_addcheat.PNG)
 
 | Descripcion               |Commit Hash                          
 |----------------|-------------------------------|
