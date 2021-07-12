@@ -435,7 +435,7 @@ Antes de terminar el proyecto debemos de tener planeado ciertos parametros a cum
 
 
 
-## Computo en la Nube
+## Historial de Edicion
 
 ### Crear unfork del proyectostorage-api
 
@@ -476,6 +476,8 @@ Crear en su carpeta de modulos funciones que emulen las interacciones con el alm
 ## Mock-Ups
 
 La imagen `vg-info-0001-videogames_list.PNG` muestra el listado de juegos registrados en la plataforma, dentro de este menu el usuario podra elegir el videojueo en el quiere consultar informacion o realizar un aporte, notese que en el listado se muestra la informacion basica de todos los  videojuegos registrado.
+
+![Image text](https://github.com/AlexisMercado/storage-api/blob/master/docs/assets/vg-info-0001-videogames_list.PNG)
 
 La imagen `vg-info-0002-Videogame_menu.PNG` Muestra el menu una vez seleccionado el juego, este meno tendra una combo box que nos dejara elegir el tipo de aportes que queremos consultar ya sea cheat, easter egg o opiniones, ademas de que en la parte baja se puede ver el voton que te dejara realizar el aporte dependiendo la informacion que estes consultando.
 
