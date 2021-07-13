@@ -32,12 +32,9 @@ siguientes:
 | /vg-info/add                        |`Capturar toda la informacion de un Videojuego`                   |
 | /vg-info/list                       |`Lista de videojuegos`                                            |
 | /vg-info/<vg_codigo>                |`Informacion de un Videojuego`                                    |
-| /vg-info/<vg_codigo>/Cheats         |`Registrar un cheat de un videojuego`                             |
 | /vg-info/<vg_codigo>/Cheats         |`Mostrar todos los cheats registrados en un Videojuego`           |
-| /vg-info/<vg_codigo>/Easter_Egg     |`Registrar un cheat de un videojuego`                             |
-| /vg-info/<vg_codigo>/Easter_Egg     |`Mostrar todos los cheats registrados en un Videojuego`           |
-| /vg-info/<vg_codigo>/Opinion        |`Registrar un cheat de un videojuego`                             |
-| /vg-info/<vg_codigo>/Opinion        |`Mostrar todos los cheats registrados en un Videojuego`           |
+| /vg-info/<vg_codigo>/Easter_Egg     |`Mostrar todos los Easter eggs registrados en un Videojuego`           |
+| /vg-info/<vg_codigo>/Opinion        |`Mostrar todas las opiniones registradas en un Videojuego`           |
 
 
 
