@@ -90,7 +90,7 @@ def AddCheat(*args, **kwargs):
     raise bottle.HTTPError(500)
 
 
-###################################### Añadir un cheat      ########################################################
+###################################### Añadir un EasterEgg     ########################################################
 #curl http://localhost:8080/vg_info/AddVg -X POST -H 'Content-Type: application/json' -d '{"cheat_id": "Ch001","cheat": "Abajo del puente hay una moneda", "username" : "cochiloco"}'
 
 
@@ -115,6 +115,27 @@ def AddCheat(*args, **kwargs):
     raise bottle.HTTPError(500)
 
 
+
+###################################### Añadir una opinion     ########################################################
+@app.post("<vg_id>/AddOpinion")
+def AddCheat(*args, **kwargs):
+
+    payload = bottle.request.json
+    print(payload)
+    try:
+        vg_id = str(payload['vg_id'])
+        cheat_id = str(payload['opinion_id'])
+        cheat = str(payload['opinion'])
+        username = str(payload['username'])
+        if len(cheat) == 0:
+            raise Exception()
+        print("Datos validos")
+        respuesta = almacenar_opinion(**payload)
+        raise HTTPError(201, respuesta)
+    except:
+        print("Datos invalidos")
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(500)
 
 
 

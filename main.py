@@ -12,11 +12,22 @@ import bottle
 import routes.auth
 import routes.storage
 import models.base
+import routes.vg_info
 
 app = bottle.Bottle()
 
 app.mount("/auth", routes.auth.app)
 app.mount("/storage", routes.storage.app)
+app.mount("/AddVg", routes.vg_info.app)
+app.mount("/AddCheat", routes.vg_info.app)
+app.mount("/AddEaster", routes.vg_info.app)
+app.mount("/AddOpinion", routes.vg_info.app)
+#app.mount("/vg_info/add", routes.vg_info.app)
+#app.mount("/vg_info/<vg_codigo>/Cheats", routes.vg_info.app)
+#app.mount("/vg_info/<vg_codigo>/Easter_Egg", routes.vg_info.app)
+#app.mount("/vg_info/<vg_codigo>/Opinion", routes.vg_info.app)
+#app.mount("/auth", routes.auth.app)
+#app.mount("/storage", routes.storage.app)
 
 
 @app.get("/")
