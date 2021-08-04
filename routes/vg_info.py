@@ -6,20 +6,16 @@ from modules.auth import auth_required
 from modules.storage import store_string, get_storage_file
 from models.example import ExampleRecord
 from modules.vg_info import almacenar_vg
+from modules.vg_info import get_vg_list
 from modules.vg_info import almacenar_cheat
-
+from modules.vg_info import almacenar_easter
 
 
 
 
 app = BottleJson()
 
-import random
-def uniqueid():
-    seed = random.getrandbits(32)
-    while True:
-       yield seed
-       seed += 1
+
 
 
 
@@ -36,12 +32,9 @@ def uniqueid():
 
 
 ###############################     Añadir un videojuego  ############################################################
-#curl http://localhost:8080/vg_info/AddVg -X POST -H 'Content-Type: application/json' -d '{"nombre": "Fifa","genero": "Deportes", "plataforma" : "xbox"}'
-@app.post("/")
+# curl http://localhost:8080/vg_info/AddCheat -X POST -H 'content-Type: application/json' -d '{"vg_id":"212","nombre": "fifa","genero": "Deportes", "plataforma" : "xbox"}'
+
 @app.get("/")
-
-
-
 
 
 @app.post("/AddVg")
@@ -54,22 +47,31 @@ def AddVg(*args, **kwargs):
         nombre = str(payload['nombre'])
         genero = str(payload['genero'])
         plaforma = str(payload['plataforma'])
-        if len(nombre) == 0:
-            raise Exception()
         print("Datos validos")
-        respuesta = almacenar_vg(**payload)
-        raise HTTPError(201, respuesta)
+        respuesta = almacenar_cheat(**payload)
+
     except:
         print("Datos invalidos")
         raise bottle.HTTPError(400)
-    raise bottle.HTTPError(500)
+    raise bottle.HTTPError(201, respuesta)
+#####################################Lista de todos los videojuegos###############################################################################
+
+#curl http://localhost:8080/vg_info/list -X GET
+@app.get("/list")
+def get_all_vg(*args, **kwargs):
+    try:
+       respuesta = get_vg_list()
+    except:
+        raise bottle.HTTPError(500, "Error interno")
+    raise bottle.HTTPError(200, respuesta)
+
+################################### Ver un juego por su id #########################################################
 
 
 ###################################### Añadir un cheat      ########################################################
-#curl http://localhost:8080/vg_info/AddVg -X POST -H 'Content-Type: application/json' -d '{"cheat_id": "Ch001","cheat": "Abajo del puente hay una moneda", "username" : "cochiloco"}'
+#curl http://localhost:8080/vg_info/AddCheat -X POST -H 'Content-Type: application/json' -d '{"vg_id":"vg003","cheat_id": "Ch001","cheat": "Abajo del puente hay una moneda", "username" : "cochiloco"}'
 
-
-@app.post("<vg_id>/AddCheat")
+@app.post("/<vg_id>/AddCheat")
 def AddCheat(*args, **kwargs):
 
     payload = bottle.request.json
@@ -79,23 +81,21 @@ def AddCheat(*args, **kwargs):
         cheat_id = str(payload['cheat_id'])
         cheat = str(payload['cheat'])
         username = str(payload['username'])
-        if len(cheat) == 0:
-            raise Exception()
+        VideojuegoNombre= str(payload['VideojuegoNombre'])
         print("Datos validos")
         respuesta = almacenar_cheat(**payload)
-        raise HTTPError(201, respuesta)
+
     except:
         print("Datos invalidos")
         raise bottle.HTTPError(400)
-    raise bottle.HTTPError(500)
-
+    raise bottle.HTTPError(201, respuesta)
 
 ###################################### Añadir un EasterEgg     ########################################################
-#curl http://localhost:8080/vg_info/AddVg -X POST -H 'Content-Type: application/json' -d '{"cheat_id": "Ch001","cheat": "Abajo del puente hay una moneda", "username" : "cochiloco"}'
+# curl http://localhost:8080/vg_info/212/AddEaster -X POST -H 'Content-Type: application/json' -d '{"vg_id":"212","easter_id": "ea0032","EasterEgg": "Abajo del puente hay una moneda", "username" : "cochiloco", "VideojuegoNombre":"Mario"}'
 
 
-@app.post("<vg_id>/AddEaster")
-def AddCheat(*args, **kwargs):
+@app.post("/<vg_id>/AddEaster")
+def Addeaster(*args, **kwargs):
 
     payload = bottle.request.json
     print(payload)
@@ -104,21 +104,21 @@ def AddCheat(*args, **kwargs):
         cheat_id = str(payload['easter_id'])
         cheat = str(payload['EasterEgg'])
         username = str(payload['username'])
-        if len(cheat) == 0:
-            raise Exception()
+        VideojuegoNombre= str(payload['VideojuegoNombre'])
         print("Datos validos")
         respuesta = almacenar_easter(**payload)
-        raise HTTPError(201, respuesta)
+
     except:
         print("Datos invalidos")
         raise bottle.HTTPError(400)
-    raise bottle.HTTPError(500)
-
+    raise bottle.HTTPError(201, respuesta)
 
 
 ###################################### Añadir una opinion     ########################################################
-@app.post("<vg_id>/AddOpinion")
-def AddCheat(*args, **kwargs):
+#curl http://localhost:8080/vg_info/212/AddOpinion -X POST -H 'Content-Type: application/json' -d '{"vg_id":"212","opinion_id": "ea0032","opinion": "Abajo del puente hay una moneda", "username" : "cochiloco", "VideojuegoNombre":"Mario"}'
+
+@app.post("/<vg_id>/AddOpinion")
+def Addopinion(*args, **kwargs):
 
     payload = bottle.request.json
     print(payload)
@@ -127,15 +127,14 @@ def AddCheat(*args, **kwargs):
         cheat_id = str(payload['opinion_id'])
         cheat = str(payload['opinion'])
         username = str(payload['username'])
-        if len(cheat) == 0:
-            raise Exception()
+        VideojuegoNombre= str(payload['VideojuegoNombre'])
         print("Datos validos")
         respuesta = almacenar_opinion(**payload)
-        raise HTTPError(201, respuesta)
+
     except:
         print("Datos invalidos")
         raise bottle.HTTPError(400)
-    raise bottle.HTTPError(500)
+    raise bottle.HTTPError(201, respuesta)
 
 
 
