@@ -17,6 +17,9 @@ import routes.vg_info
 app = bottle.Bottle()
 
 app.mount("/vg_info", routes.vg_info.app)
+app.mount("/vg_info/Cheats", routes.vg_info.app)
+app.mount("/vg_info/EasterEgg", routes.vg_info.app)
+app.mount("/vg_info/Opinion", routes.vg_info.app)
 # curl localhost:8080/vg_info/<tu-0ruta>
 #app.mount("/auth", routes.auth.app)
 #app.mount("/storage", routes.storage.app)

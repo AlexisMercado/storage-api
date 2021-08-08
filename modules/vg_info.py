@@ -79,7 +79,7 @@ def almacenar_opinion(vg_id=None, opinion_id=None, opinion=None, username=None, 
     #print(nombre, eda)
     para_almacenar = {"vg_id": vg_id, "opinion_id": opinion_id, "opinion": opinion, "username":username, "VideojuegoNombre": VideojuegoNombre }
     json_text = json.dumps(para_almacenar)
-    nombre_de_archivo = f"{vg_id}-{easter_id}-{VideojuegoNombre}.json"
+    nombre_de_archivo = f"{vg_id}-{opinion_id}-{VideojuegoNombre}.json"
     datos = store_string(
         "vg_info/Carpeta4",
         nombre_de_archivo,
@@ -96,6 +96,86 @@ def get_vg_list(videogames=None):
     )
     if videogames is  None:
         return query_result["content"]
+
+
+def get_cheat_list(cheats=None):
+    query_result = query_storage(
+        "vg_info/Carpeta2",
+    )
+    if cheats is  None:
+        return query_result["content"]
+
+
+def get_easter_list(easter=None):
+    query_result = query_storage(
+        "vg_info/Carpeta3",
+    )
+    if easter is  None:
+        return query_result["content"]
+
+def get_opinion_list(opinion=None):
+    query_result = query_storage(
+        "vg_info/Carpeta4",
+    )
+    if opinion is  None:
+        return query_result["content"]        
+
+
+def get_vg(vg_id=None):
+    query_result = query_storage(
+        "vg_info/Carpeta",
+    )
+    if vg_id is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if vg_id in r
+        ]
+    print("Exito")
+
+
+
+
+
+def get_cheat(cheat_id=None):
+    query_result = query_storage(
+        "vg_info/Carpeta2",
+    )
+    if cheat_id is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if cheat_id in r
+        ]
+    print("Exito")
+
+
+
+
+def get_easter(easter_id=None):
+    query_result = query_storage(
+        "vg_info/Carpeta3",
+    )
+    if easter_id is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if easter_id in r
+        ]
+    print("Exito")
+
+
+def get_opinion(opinion_id=None):
+    query_result = query_storage(
+        "vg_info/Carpeta4",
+    )
+    if opinion_id is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if opinion_id in r
+        ]
+    print("Exito")
 
 
 

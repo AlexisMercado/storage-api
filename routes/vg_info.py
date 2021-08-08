@@ -7,8 +7,16 @@ from modules.storage import store_string, get_storage_file
 from models.example import ExampleRecord
 from modules.vg_info import almacenar_vg
 from modules.vg_info import get_vg_list
+from modules.vg_info import get_vg
+from modules.vg_info import get_cheat
+from modules.vg_info import get_easter
+from modules.vg_info import get_opinion
+from modules.vg_info import get_cheat_list
+from modules.vg_info import get_easter_list
+from modules.vg_info import get_opinion_list
 from modules.vg_info import almacenar_cheat
 from modules.vg_info import almacenar_easter
+from modules.vg_info import almacenar_opinion
 
 
 
@@ -30,11 +38,11 @@ app = BottleJson()
     #raise bottle.HTTPError(501, 'Error')
 
 
-
+@app.get("/")
 ###############################     Añadir un videojuego  ############################################################
 # curl http://localhost:8080/vg_info/AddCheat -X POST -H 'content-Type: application/json' -d '{"vg_id":"212","nombre": "fifa","genero": "Deportes", "plataforma" : "xbox"}'
 
-@app.get("/")
+
 
 
 @app.post("/AddVg")
@@ -66,8 +74,13 @@ def get_all_vg(*args, **kwargs):
     raise bottle.HTTPError(200, respuesta)
 
 ################################### Ver un juego por su id #########################################################
-
-
+@app.get("/<vg_id>")
+def get_vg_by_id(*args, vg_id=None, **kwargs):
+    try:
+        respuesta = get_vg(vg_id = vg_id)
+    except:
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
 ###################################### Añadir un cheat      ########################################################
 #curl http://localhost:8080/vg_info/AddCheat -X POST -H 'Content-Type: application/json' -d '{"vg_id":"vg003","cheat_id": "Ch001","cheat": "Abajo del puente hay una moneda", "username" : "cochiloco"}'
 
@@ -90,6 +103,26 @@ def AddCheat(*args, **kwargs):
         raise bottle.HTTPError(400)
     raise bottle.HTTPError(201, respuesta)
 
+#####################################Lista de todos los Cheats###############################################################################
+
+#curl http://localhost:8080/vg_info/Cheats/list -X GET
+@app.get("/Cheats/list")
+def get_all_cheat(*args, **kwargs):
+    try:
+       respuesta = get_cheat_list()
+    except:
+        raise bottle.HTTPError(500, "Error interno")
+    raise bottle.HTTPError(200, respuesta)
+
+###################################### Ver un cheat por su id #####################################################
+#curl http://localhost:8080/vg_info/Cheats/Ch001 -X GET
+@app.get("/Cheats/<cheat_id>")
+def get_cheat_by_id(*args, cheat_id=None, **kwargs):
+    try:
+        respuesta = get_cheat(cheat_id = cheat_id)
+    except:
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
 ###################################### Añadir un EasterEgg     ########################################################
 # curl http://localhost:8080/vg_info/212/AddEaster -X POST -H 'Content-Type: application/json' -d '{"vg_id":"212","easter_id": "ea0032","EasterEgg": "Abajo del puente hay una moneda", "username" : "cochiloco", "VideojuegoNombre":"Mario"}'
 
@@ -113,6 +146,27 @@ def Addeaster(*args, **kwargs):
         raise bottle.HTTPError(400)
     raise bottle.HTTPError(201, respuesta)
 
+###################################### Mostrar easter egg por id #####################################################
+#curl http://localhost:8080/vg_info/Easter/ea0032 -X GET
+@app.get("/Easter/<easter_id>")
+def get_easter_by_id(*args, easter_id=None, **kwargs):
+    try:
+        respuesta = get_easter(easter_id = easter_id)
+    except:
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
+
+
+#####################################Lista de todos los easter eggs ###############################################################################
+
+#curl http://localhost:8080/vg_info/Easter -X GET
+@app.get("/Easter/list")
+def get_all_Easter(*args, **kwargs):
+    try:
+       respuesta = get_easter_list()
+    except:
+        raise bottle.HTTPError(500, "Error interno")
+    raise bottle.HTTPError(200, respuesta)
 
 ###################################### Añadir una opinion     ########################################################
 #curl http://localhost:8080/vg_info/212/AddOpinion -X POST -H 'Content-Type: application/json' -d '{"vg_id":"212","opinion_id": "ea0032","opinion": "Abajo del puente hay una moneda", "username" : "cochiloco", "VideojuegoNombre":"Mario"}'
@@ -137,6 +191,29 @@ def Addopinion(*args, **kwargs):
     raise bottle.HTTPError(201, respuesta)
 
 
+
+#####################################Lista de todos las opiniones###############################################################################
+
+#curl http://localhost:8080/vg_info/Opinion/list -X GET
+@app.get("/Opinion/list")
+def get_all_opinion(*args, **kwargs):
+    try:
+       respuesta = get_opinion_list()
+    except:
+        raise bottle.HTTPError(500, "Error interno")
+    raise bottle.HTTPError(200, respuesta)
+
+
+
+###################################### Mostrar opinion por id #####################################################
+#curl http://localhost:8080/vg_info/Opinion/op0032 -X GET
+@app.get("/Opinion/<opinion_id>")
+def get_opinion_by_id(*args, opinion_id=None, **kwargs):
+    try:
+        respuesta = get_opinion(opinion_id = opinion_id)
+    except:
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
 
 
 
