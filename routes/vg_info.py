@@ -14,6 +14,7 @@ from modules.vg_info import get_opinion
 from modules.vg_info import get_cheat_list
 from modules.vg_info import get_easter_list
 from modules.vg_info import get_opinion_list
+from modules.vg_info import add_new_image
 from modules.vg_info import almacenar_cheat
 from modules.vg_info import almacenar_easter
 from modules.vg_info import almacenar_opinion
@@ -40,7 +41,7 @@ app = BottleJson()
 
 @app.get("/")
 ###############################     Añadir un videojuego  ############################################################
-# curl http://localhost:8080/vg_info/AddCheat -X POST -H 'content-Type: application/json' -d '{"vg_id":"212","nombre": "fifa","genero": "Deportes", "plataforma" : "xbox"}'
+# curl http://localhost:8080/vg_info/AddVg -X POST -H 'content-Type: application/json' -d '{"vg_id":"VG001","nombre": "Fifa 2021","genero": "Deportes", "plataforma" : "Xbox"}'
 
 
 
@@ -56,7 +57,7 @@ def AddVg(*args, **kwargs):
         genero = str(payload['genero'])
         plaforma = str(payload['plataforma'])
         print("Datos validos")
-        respuesta = almacenar_cheat(**payload)
+        respuesta = almacenar_vg(**payload)
 
     except:
         print("Datos invalidos")
@@ -74,7 +75,9 @@ def get_all_vg(*args, **kwargs):
     raise bottle.HTTPError(200, respuesta)
 
 ################################### Ver un juego por su id #########################################################
-@app.get("/<vg_id>")
+# curl http://localhost:8080/vg_info/VG007/GetVg -X GET
+
+@app.get("/<vg_id>/GetVg")
 def get_vg_by_id(*args, vg_id=None, **kwargs):
     try:
         respuesta = get_vg(vg_id = vg_id)
@@ -82,8 +85,7 @@ def get_vg_by_id(*args, vg_id=None, **kwargs):
         raise bottle.HTTPError(400)
     raise bottle.HTTPError(200, respuesta)
 ###################################### Añadir un cheat      ########################################################
-#curl http://localhost:8080/vg_info/AddCheat -X POST -H 'Content-Type: application/json' -d '{"vg_id":"vg003","cheat_id": "Ch001","cheat": "Abajo del puente hay una moneda", "username" : "cochiloco"}'
-
+#curl http://localhost:8080/vg_info/VG001/AddCheat -X POST -H 'Content-Type: application/json' -d '{"vg_id":"VG001","cheat_id": "CH001","cheat": "Cuando vayas perdiendo cambia de equipo desde el menu de pausa", "username" : "cochilocote", "VideojuegoNombre" : "FIFA 2021"}'
 @app.post("/<vg_id>/AddCheat")
 def AddCheat(*args, **kwargs):
 
@@ -105,8 +107,8 @@ def AddCheat(*args, **kwargs):
 
 #####################################Lista de todos los Cheats###############################################################################
 
-#curl http://localhost:8080/vg_info/Cheats/list -X GET
-@app.get("/Cheats/list")
+# curl http://localhost:8080/vg_info/Cheatslist -X GET
+@app.get("/Cheatslist")
 def get_all_cheat(*args, **kwargs):
     try:
        respuesta = get_cheat_list()
@@ -115,8 +117,8 @@ def get_all_cheat(*args, **kwargs):
     raise bottle.HTTPError(200, respuesta)
 
 ###################################### Ver un cheat por su id #####################################################
-#curl http://localhost:8080/vg_info/Cheats/Ch001 -X GET
-@app.get("/Cheats/<cheat_id>")
+#curl http://localhost:8080/vg_info/CH001/Cheatslist -X GET
+@app.get("/<cheat_id>/Cheatslist")
 def get_cheat_by_id(*args, cheat_id=None, **kwargs):
     try:
         respuesta = get_cheat(cheat_id = cheat_id)
@@ -147,8 +149,8 @@ def Addeaster(*args, **kwargs):
     raise bottle.HTTPError(201, respuesta)
 
 ###################################### Mostrar easter egg por id #####################################################
-#curl http://localhost:8080/vg_info/Easter/ea0032 -X GET
-@app.get("/Easter/<easter_id>")
+#curl http://localhost:8080/vg_info/EA007/Easterlist -X GET
+@app.get("/<easter_id>/Easterlist")
 def get_easter_by_id(*args, easter_id=None, **kwargs):
     try:
         respuesta = get_easter(easter_id = easter_id)
@@ -159,8 +161,8 @@ def get_easter_by_id(*args, easter_id=None, **kwargs):
 
 #####################################Lista de todos los easter eggs ###############################################################################
 
-#curl http://localhost:8080/vg_info/Easter -X GET
-@app.get("/Easter/list")
+#curl http://localhost:8080/vg_info/Easterlist -X GET
+@app.get("/Easterlist")
 def get_all_Easter(*args, **kwargs):
     try:
        respuesta = get_easter_list()
@@ -178,8 +180,8 @@ def Addopinion(*args, **kwargs):
     print(payload)
     try:
         vg_id = str(payload['vg_id'])
-        cheat_id = str(payload['opinion_id'])
-        cheat = str(payload['opinion'])
+        opinion_id = str(payload['opinion_id'])
+        opinion = str(payload['opinion'])
         username = str(payload['username'])
         VideojuegoNombre= str(payload['VideojuegoNombre'])
         print("Datos validos")
@@ -191,11 +193,10 @@ def Addopinion(*args, **kwargs):
     raise bottle.HTTPError(201, respuesta)
 
 
-
 #####################################Lista de todos las opiniones###############################################################################
 
-#curl http://localhost:8080/vg_info/Opinion/list -X GET
-@app.get("/Opinion/list")
+#curl http://localhost:8080/vg_info/Opinionlist -X GET
+@app.get("/Opinionlist")
 def get_all_opinion(*args, **kwargs):
     try:
        respuesta = get_opinion_list()
@@ -206,8 +207,8 @@ def get_all_opinion(*args, **kwargs):
 
 
 ###################################### Mostrar opinion por id #####################################################
-#curl http://localhost:8080/vg_info/Opinion/op0032 -X GET
-@app.get("/Opinion/<opinion_id>")
+#curl http://localhost:8080/vg_info/op0032/Opinion -X GET
+@app.get("/<opinion_id>/Opinionlist")
 def get_opinion_by_id(*args, opinion_id=None, **kwargs):
     try:
         respuesta = get_opinion(opinion_id = opinion_id)
@@ -218,8 +219,21 @@ def get_opinion_by_id(*args, opinion_id=None, **kwargs):
 
 
 
-
-
+################################### Agregar Imagen ##############################################
+##  curl http://localhost:8080/vg_info/image/new/001 -X POST -H 'Content-Type: multipart/form-data' -F 'image_file=@/C/Users/alexi/Pictures/Fifa.jpg'
+@app.post("/image/new/<imageName>")
+def new_image(imageName):
+    try:
+        imageFile = bottle.request.files.get("imageFile")
+        payload = {
+            "imageName": imageName,
+            "imageFile": imageFile.file
+        }
+        respuesta = add_new_image(**payload)
+    except:
+        print("Invalid data")
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(201, "The image has been upload")
 
 
 

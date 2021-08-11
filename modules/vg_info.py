@@ -32,7 +32,7 @@ def almacenar_vg(vg_id=None, nombre=None, genero=None, plataforma=None):
     para_almacenar = {"vg_id": vg_id,"nombre": nombre, "genero": genero, "plataforma":plataforma }
     nombre_de_archivo = f"{vg_id}-{nombre}.json"
     datos = store_string(
-        "vg_info/Carpeta",
+        "vg_info/Videojuegos",
         nombre_de_archivo,
         json.dumps(para_almacenar)
     )
@@ -52,7 +52,7 @@ def almacenar_cheat(vg_id=None, cheat_id=None, cheat=None, username=None, Videoj
     json_text = json.dumps(para_almacenar)
     nombre_de_archivo = f"{vg_id}-{cheat_id}-{VideojuegoNombre}.json"
     datos = store_string(
-        "vg_info/Carpeta2",
+        "vg_info/Cheats",
         nombre_de_archivo,
         json.dumps(para_almacenar)
     )
@@ -67,7 +67,7 @@ def almacenar_easter(vg_id=None, easter_id=None, EasterEgg=None, username=None, 
     json_text = json.dumps(para_almacenar)
     nombre_de_archivo = f"{vg_id}-{easter_id}-{VideojuegoNombre}.json"
     datos = store_string(
-        "vg_info/Carpeta3",
+        "vg_info/EsterEggs",
         nombre_de_archivo,
         json.dumps(para_almacenar)
     )
@@ -81,18 +81,18 @@ def almacenar_opinion(vg_id=None, opinion_id=None, opinion=None, username=None, 
     json_text = json.dumps(para_almacenar)
     nombre_de_archivo = f"{vg_id}-{opinion_id}-{VideojuegoNombre}.json"
     datos = store_string(
-        "vg_info/Carpeta4",
+        "vg_info/Opiniones",
         nombre_de_archivo,
         json.dumps(para_almacenar)
     )
-    return "Exito"
+    return datos
 
 
 
 
 def get_vg_list(videogames=None):
     query_result = query_storage(
-        "vg_info/Carpeta",
+        "vg_info/Videojuegos",
     )
     if videogames is  None:
         return query_result["content"]
@@ -100,7 +100,7 @@ def get_vg_list(videogames=None):
 
 def get_cheat_list(cheats=None):
     query_result = query_storage(
-        "vg_info/Carpeta2",
+        "vg_info/Cheats",
     )
     if cheats is  None:
         return query_result["content"]
@@ -108,22 +108,22 @@ def get_cheat_list(cheats=None):
 
 def get_easter_list(easter=None):
     query_result = query_storage(
-        "vg_info/Carpeta3",
+        "vg_info/EasterEgg",
     )
     if easter is  None:
         return query_result["content"]
 
 def get_opinion_list(opinion=None):
     query_result = query_storage(
-        "vg_info/Carpeta4",
+        "vg_info/Opiniones",
     )
     if opinion is  None:
-        return query_result["content"]        
+        return query_result["content"]
 
 
 def get_vg(vg_id=None):
     query_result = query_storage(
-        "vg_info/Carpeta",
+        "vg_info/Videojuegos",
     )
     if vg_id is not None:
         return [
@@ -139,7 +139,7 @@ def get_vg(vg_id=None):
 
 def get_cheat(cheat_id=None):
     query_result = query_storage(
-        "vg_info/Carpeta2",
+        "vg_info/Cheats",
     )
     if cheat_id is not None:
         return [
@@ -154,7 +154,7 @@ def get_cheat(cheat_id=None):
 
 def get_easter(easter_id=None):
     query_result = query_storage(
-        "vg_info/Carpeta3",
+        "vg_info/EsterEggs",
     )
     if easter_id is not None:
         return [
@@ -167,7 +167,7 @@ def get_easter(easter_id=None):
 
 def get_opinion(opinion_id=None):
     query_result = query_storage(
-        "vg_info/Carpeta4",
+        "vg_info/Opiniones",
     )
     if opinion_id is not None:
         return [
@@ -176,6 +176,23 @@ def get_opinion(opinion_id=None):
            if opinion_id in r
         ]
     print("Exito")
+
+
+
+
+
+
+
+def add_new_image(imageName=None, imageFile=None):
+    filename = f"{imageName}.jpg"
+    store_bytes(
+        "vg_info/images",
+        filename,
+        imageFile.read()
+    )
+    return f"vg_info/images/{filename}"
+
+
 
 
 
