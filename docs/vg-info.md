@@ -487,3 +487,123 @@ La imagen  `vg-info-0003-videogamesa_addcheat.PNG` no muestra un recuadro para i
 | Descripcion               |Commit Hash                          
 |----------------|-------------------------------|
 |**Mock-Ups y sus descriciones**  |`3038ef66dba9ead18e22aeb762e9c5ccdff2e4e3`    |
+
+# Casos de uso.
+
+### Agregar un videojuego.
+
+El Usuario puede agregar el videojuego de su eleccion, tomando en cuenta el nombre del videojuego, la plataforma el genero y el id.
+
+```
+curl http://localhost:8080/vg_info/AddVg -X POST -H 'content-Type: application/json' -d '{"vg_id":"VG001","nombre": "Fifa 2021","genero": "Deportes", "plataforma" : "Xbox"}'
+```
+
+
+### Lista de todos los videojuego agregados.
+
+El Usuario puede consultar la lista de todos los Videojuegos registrados en el sistema.
+
+```
+curl http://localhost:8080/vg_info/list -X GET
+```
+
+### Consultar un videojuego en especifico.
+
+El Usuario puede consultar la un videojuego en especifico utilizando el id de este.
+
+```
+curl http://localhost:8080/vg_info/VG007/GetVg -X GET
+```
+
+
+### Añadir un Cheat
+
+El usuario agregara un Cheat al videojuego de su eleccion tomando en cuenta su id y los siguientes datos para el cheat: id del cheat ,nombre del videojuego, el cheat y el nombre de usuario .
+
+```
+curl http://localhost:8080/vg_info/VG001/AddCheat -X POST -H 'Content-Type: application/json' -d '{"vg_id":"VG001","cheat_id": "CH001","cheat": "Cuando vayas perdiendo cambia de equipo desde el menu de pausa", "username" : "cochilocote", "VideojuegoNombre" : "FIFA 2021"}'
+```
+
+### Consultar la lista de todos los cheats.
+
+El Usuario puede consultar la lista de todos los cheats registrados en el sistema.
+
+```
+curl http://localhost:8080/vg_info/Cheatslist -X GET
+```
+
+
+
+### Consultar la informacion de un cheat en especifico.
+
+El Usuario puede consultar la informacion un de un cheat de un videojuego en especifico utilizando el id de este.
+
+```
+curl http://localhost:8080/vg_info/CH001/Cheatslist -X GET
+```
+
+
+
+### Añadir un Easter Egg
+
+El usuario agregara un Easter Egg al videojuego de su eleccion tomando en cuenta su id y los siguientes datos para el Easter Egg: id del Easter Egg ,nombre del videojuego, el Easter Egg y el nombre de usuario .
+
+```
+ curl http://localhost:8080/vg_info/212/AddEaster -X POST -H 'Content-Type: application/json' -d '{"vg_id":"212","easter_id": "ea0032","EasterEgg": "Abajo del puente hay una moneda", "username" : "cochiloco", "VideojuegoNombre":"Mario"}'
+```
+
+
+
+### Consultar la lista de todos los Easter Eggs.
+
+El Usuario puede consultar la lista entera de todos los Easter Egg registrados
+
+```
+curl http://localhost:8080/vg_info/Easterlist -X GET
+```
+
+
+### Consultar un Easter Egg en especifico.
+
+El Usuario puede consultar un Easter Egg en especifico utilizando su id.
+
+```
+curl http://localhost:8080/vg_info/EA007/Easterlist -X GET
+```
+
+### Añadir una opinion
+
+El usuario agregara una Opinion al videojuego de su eleccion tomando en cuenta su id y los siguientes datos para la Opinon: id de la opinion ,nombre del videojuego, el Opinion y el nombre de usuario .
+
+
+```
+curl http://localhost:8080/vg_info/VG008/AddOpinion -X POST -H 'Content-Type: application/json' -d '{"vg_id":"VG008","opinion_id": "OP001","opinion": "Increible juego el tiempo pasa volando de lo divertido que es", "username" : "MansyX3", "VideojuegoNombre":"Animal Crossing"}'
+
+```
+
+
+
+### Consultar la lista de todos las opiniones.
+
+El Usuario puede consultar la lista entera de todos las opiniones registradas
+
+```
+curl http://localhost:8080/vg_info/Opinionlist -X GET
+```
+
+
+### Consultar una opinionn en especifico.
+
+El Usuario puede consultar una una opinion en especifico utilizando su id.
+
+```
+curl http://localhost:8080/vg_info/op0032/Opinion -X GET
+```
+
+### Agregar una imagen
+
+El usuario podra subir una imagen al sistema.
+
+```
+curl http://localhost:8080/vg_info/image/new/001 -X POST -H 'Content-Type: multipart/form-data' -F 'image_file=@/C/Users/alexi/Pictures/Fifa.jpg'
+```
