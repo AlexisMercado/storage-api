@@ -468,25 +468,39 @@ Crear en su carpeta de modulos funciones que emulen las interacciones con el alm
 |----------------|-------------------------------|
 |**Creacion de modules/VG-info.py:**  |`7b92f18209ea32988fdeafe33956d3bf1bd440fe`    |
 
+| Descripcion               |Commit Hash                          
+|----------------|-------------------------------|
+|**Mock-Ups y sus descriciones**  |`3038ef66dba9ead18e22aeb762e9c5ccdff2e4e3`    |
 
+## Planificacion de Front End (Mock-Ups).
 
-## Mock-Ups
+Para planear el desarollo del Frontend es necesario tener en cuenta las herramientas que se
+utilizaran y la estructura y diseño que tendran cada pestaña en la que el usuario estara utilizando. Es muy importante que el Frontend sea realizado teniendo en mente las funcionalidades ya implementadas en el Backend.
+
+La estructura de la pagina sera realizada por medio de HTML y CSS.
+
+#### La ventana principal
+Esta sera la primer ventana con la que el usuario se topara al ingresar a la plataforma.
 
 La imagen `vg-info-0001-videogames_list.PNG` muestra el listado de juegos registrados en la plataforma, dentro de este menu el usuario podra elegir el videojueo en el quiere consultar informacion o realizar un aporte, notese que en el listado se muestra la informacion basica de todos los  videojuegos registrado.
 
 ![Image text](https://github.com/AlexisMercado/storage-api/blob/master/docs/assets/vg-info-0001-videogames_list.PNG)
 
-La imagen `vg-info-0002-Videogame_menu.PNG` Muestra el menu una vez seleccionado el juego, este meno tendra una combo box que nos dejara elegir el tipo de aportes que queremos consultar ya sea cheat, easter egg o opiniones, ademas de que en la parte baja se puede ver el voton que te dejara realizar el aporte dependiendo la informacion que estes consultando.
+#### Menu de un Videojuego
+Al seleccionar y hacer clic en una de los videojuegos de la lista nos llevara a la siguiente ventana.
+
+La imagen `vg-info-0002-Videogame_menu.PNG` Muestra el menu una vez seleccionado el juego, este menu tendra una combo box que nos dejara elegir el tipo de aportes que queremos consultar ya sea cheat, easter egg o opiniones, ademas de que en la parte baja se puede ver el boton que te dejara realizar el aporte dependiendo la informacion que estes consultando.
+
 
 ![Image text](https://github.com/AlexisMercado/storage-api/blob/master/docs/assets/vg-info-0002-Videogame_menu.PNG)
+
+Al hacer clic en el boton ADD nos llevara a la seguiente ventana que es en la cual el usuario podra realizar su aporte (Dependiendo si en la ventana anterior estaba consultando cheats, Easter Egg u Opiniones)
 
 La imagen  `vg-info-0003-videogamesa_addcheat.PNG` no muestra un recuadro para ingresar el texto que en este caso seria un cheat.
 
 ![Image text](https://github.com/AlexisMercado/storage-api/blob/master/docs/assets/vg-info-0003-videogamesa_addcheat.PNG)
 
-| Descripcion               |Commit Hash                          
-|----------------|-------------------------------|
-|**Mock-Ups y sus descriciones**  |`3038ef66dba9ead18e22aeb762e9c5ccdff2e4e3`    |
+
 
 # Casos de uso.
 
