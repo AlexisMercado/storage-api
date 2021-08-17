@@ -495,7 +495,7 @@ La imagen  `vg-info-0003-videogamesa_addcheat.PNG` no muestra un recuadro para i
 El Usuario puede agregar el videojuego de su eleccion, tomando en cuenta el nombre del videojuego, la plataforma el genero y el id.
 
 ```
-curl http://localhost:8080/vg_info/AddVg -X POST -H 'content-Type: application/json' -d '{"vg_id":"VG001","nombre": "Fifa 2021","genero": "Deportes", "plataforma" : "Xbox"}'
+curl http://localhost:8080/vg_info/AddVg -X POST -H 'content-Type: application/json' -d '{"vg_id":"VG009","nombre": "The Legend Of Zelda Ocarina Of Time","genero": "Aventura", "plataforma" : "Nintendo"}'
 ```
 
 
@@ -512,7 +512,7 @@ curl http://localhost:8080/vg_info/list -X GET
 El Usuario puede consultar la un videojuego en especifico utilizando el id de este.
 
 ```
-curl http://localhost:8080/vg_info/VG007/GetVg -X GET
+curl http://localhost:8080/vg_info/VG009/GetVg -X GET
 ```
 
 
@@ -521,7 +521,7 @@ curl http://localhost:8080/vg_info/VG007/GetVg -X GET
 El usuario agregara un Cheat al videojuego de su eleccion tomando en cuenta su id y los siguientes datos para el cheat: id del cheat ,nombre del videojuego, el cheat y el nombre de usuario .
 
 ```
-curl http://localhost:8080/vg_info/VG001/AddCheat -X POST -H 'Content-Type: application/json' -d '{"vg_id":"VG001","cheat_id": "CH001","cheat": "Cuando vayas perdiendo cambia de equipo desde el menu de pausa", "username" : "cochilocote", "VideojuegoNombre" : "FIFA 2021"}'
+curl http://localhost:8080/vg_info/VG001/AddCheat -X POST -H 'Content-Type: application/json' -d '{"vg_id":"VG009","cheat_id": "CH002","cheat": "Cuando sueltes unos bugs usa tu botella para capturar uno. Ahora mira tu botella y tendras 3 de ellos.", "username" : "ZeldaLover", "VideojuegoNombre" : "The legend Of Zelda Ocarina Of Time"}'
 ```
 
 ### Consultar la lista de todos los cheats.
@@ -539,7 +539,7 @@ curl http://localhost:8080/vg_info/Cheatslist -X GET
 El Usuario puede consultar la informacion un de un cheat de un videojuego en especifico utilizando el id de este.
 
 ```
-curl http://localhost:8080/vg_info/CH001/Cheatslist -X GET
+curl http://localhost:8080/vg_info/CH002/Cheatslist -X GET
 ```
 
 
@@ -549,7 +549,7 @@ curl http://localhost:8080/vg_info/CH001/Cheatslist -X GET
 El usuario agregara un Easter Egg al videojuego de su eleccion tomando en cuenta su id y los siguientes datos para el Easter Egg: id del Easter Egg ,nombre del videojuego, el Easter Egg y el nombre de usuario .
 
 ```
- curl http://localhost:8080/vg_info/212/AddEaster -X POST -H 'Content-Type: application/json' -d '{"vg_id":"212","easter_id": "ea0032","EasterEgg": "Abajo del puente hay una moneda", "username" : "cochiloco", "VideojuegoNombre":"Mario"}'
+ curl http://localhost:8080/vg_info/212/AddEaster -X POST -H 'Content-Type: application/json' -d '{"vg_id":"VG009","easter_id": "EA002","EasterEgg": "cuando te encuentras en el patio del castillo de Hyrule, justo antes de hablar con Zelda, si fisgoneas en las ventanas podrás ver varios retratos de Mario, Peach e incluso Bowser,", "username" : "ZeldaLover", "VideojuegoNombre":"The Legend Of Zelda Ocarina Of Time"}'
 ```
 
 
@@ -568,7 +568,7 @@ curl http://localhost:8080/vg_info/Easterlist -X GET
 El Usuario puede consultar un Easter Egg en especifico utilizando su id.
 
 ```
-curl http://localhost:8080/vg_info/EA007/Easterlist -X GET
+curl http://localhost:8080/vg_info/EA002/Easterlist -X GET
 ```
 
 ### Añadir una opinion
@@ -577,7 +577,7 @@ El usuario agregara una Opinion al videojuego de su eleccion tomando en cuenta s
 
 
 ```
-curl http://localhost:8080/vg_info/VG008/AddOpinion -X POST -H 'Content-Type: application/json' -d '{"vg_id":"VG008","opinion_id": "OP001","opinion": "Increible juego el tiempo pasa volando de lo divertido que es", "username" : "MansyX3", "VideojuegoNombre":"Animal Crossing"}'
+curl http://localhost:8080/vg_info/VG008/AddOpinion -X POST -H 'Content-Type: application/json' -d '{"vg_id":"VG009","opinion_id": "OP002","opinion": "Increible juego el tiempo pasa volando de lo divertido que es", "username" : "MansyX3", "VideojuegoNombre":"The Legend Of Zelda Ocarina Of Time"}'
 
 ```
 
@@ -597,7 +597,7 @@ curl http://localhost:8080/vg_info/Opinionlist -X GET
 El Usuario puede consultar una una opinion en especifico utilizando su id.
 
 ```
-curl http://localhost:8080/vg_info/op0032/Opinion -X GET
+curl http://localhost:8080/vg_info/OP002/Opinionlist -X GET
 ```
 
 ### Agregar una imagen
