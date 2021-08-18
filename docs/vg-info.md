@@ -11,7 +11,6 @@
 Las entidades que se tienen en mente para el proyecto son las
 siguientes:
 
-- Usuario (Nombre, apellido, fecha_nac, Nickname_id, steam_id, XboxLive_id, PSN_id)
 
 - Videojuego (Nombre, Genero, plataformas, vg_codigo )
 
@@ -530,7 +529,7 @@ curl http://localhost:8080/vg_info/CH002/Cheatslist -X GET
 El usuario agregara un Easter Egg al videojuego de su eleccion tomando en cuenta su id y los siguientes datos para el Easter Egg: id del Easter Egg ,nombre del videojuego, el Easter Egg y el nombre de usuario .
 
 ```
- curl http://localhost:8080/vg_info/212/AddEaster -X POST -H 'Content-Type: application/json' -d '{"vg_id":"VG009","easter_id": "EA002","EasterEgg": "cuando te encuentras en el patio del castillo de Hyrule, justo antes de hablar con Zelda, si fisgoneas en las ventanas podrás ver varios retratos de Mario, Peach e incluso Bowser,", "username" : "ZeldaLover", "VideojuegoNombre":"The Legend Of Zelda Ocarina Of Time"}'
+curl http://localhost:8080/vg_info/VG007/AddEaster -X POST -H 'Content-Type: application/json' -d '{"vg_id":"VG007","easter_id": "EA001","EasterEgg": "Completando los 120 shrines del juego podras desbloquear el traje verde clasico de link", "username" : "NKSkid2", "VideojuegoNombre":"The Legend of Zelda Breath of The wild"}'
 ```
 
 
@@ -593,3 +592,6 @@ Una vez finalizado el codigo se puede llegar a la conclusion que hay varia area 
 
 - Funcion para editar Videojuegos, Cheats, Easter Eggs y Opiniones.
 - Funcion para eliminar Videojuegos, Cheats, Easter Eggs y Opiniones.
+
+Otra de las funcionalidades que hizo falta fue la de dar de alta usuarios.
+Todas las funciones relacionadas con los con los usuarios como entidad fueron omitidas por cuestiones de tiempo y desconocimiento en el tema, pero que en un futuro pronto podrian añadirse
