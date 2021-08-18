@@ -27,14 +27,15 @@ siguientes:
 
 |PATH                                     | Descripcion                                                      |
 |-----------------------------------------|------------------------------------------------------------------|
-| /vg-info/addUser                    |`Agregar usuario`                                                 |
-| /vg-info/addUser/<Nickname_id>      |`Consultar informacion del usuario`                               |
-| /vg-info/add                        |`Capturar toda la informacion de un Videojuego`                   |
-| /vg-info/list                       |`Lista de videojuegos`                                            |
-| /vg-info/<vg_codigo>                |`Informacion de un Videojuego`                                    |
-| /vg-info/<vg_codigo>/Cheats         |`Mostrar todos los cheats registrados en un Videojuego`           |
-| /vg-info/<vg_codigo>/Easter_Egg     |`Mostrar todos los Easter eggs registrados en un Videojuego`           |
-| /vg-info/<vg_codigo>/Opinion        |`Mostrar todas las opiniones registradas en un Videojuego`           |
+| /addVG                    |Agregar un videojueo usuario                                                 |
+| /<vg_id>/GetVg      |Consultar informacion de un Videojuego                               |
+| /<vg_id>/AddCheat                       |Agregar un Cheat a un Videojuego                   |
+| /Cheatslist                      |Lista de todos lo cheats registrados                                            |
+| /<vg_id>/AddEaster"               |Agregar un Easter Egg a un videojueo                                    |
+| /vg-info/<vg_codigo>/Cheats         |Mostrar todos los cheats registrados en un Videojuego           |
+| /Easterlist    |Consultar la lista de los Easter Eggs Registrados          |
+| /<vg_id>/AddOpinion"       |Agregar un una opinion a un videojuego          |
+| /Opinionlist       |Consultar la lista de las opiniones          |
 
 
 
@@ -48,13 +49,9 @@ siguientes:
 - Solicitar el Nombre, Genero y plaformas en las que esta disponible.
 - El codigo del juego se generara de forma automatica
 
-**Actualizacion del estatus del videojuego**
-- Eliminar videojuego
 
-### Operaciones de Usuario
-**Registrar un usuario**
-- Solicitar el nombre, apellido y fecha de nacimiento.
-- El usuario podra elegir su propio Nickname_id
+
+
 
 ### Operaciones de cheats
 **Ingresar un cheat**
@@ -92,40 +89,7 @@ siguientes:
 
 ## Estructura de solicitud y respuesta
 
-### Registro de usuario
 
-
-
-```
-
-     {
-
-          "Nombre": "Bill",
-
-          "apellido": "Williams",
-
-          "fecha_nac": "1998-01-08",
-
-          "Nickname_id": "Bi11",
-
-          "steam_id":    "Billpcma$ter",
-
-          "XboxLive_id": "Billynator",
-
-          "PSN_id":      "Kid10"
-
-    }
-```
-
-#### Respuesta de registro de usuario exitosa
-
-```
-
-     {
-
-          "Nickname_id": "Bi11"
-    }
-```
 
 #### Mensaje de fallo
 
