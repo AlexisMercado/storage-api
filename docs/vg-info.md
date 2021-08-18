@@ -29,13 +29,16 @@ siguientes:
 |-----------------------------------------|------------------------------------------------------------------|
 | /addVG                    |Agregar un videojueo usuario                                                 |
 | /<vg_id>/GetVg      |Consultar informacion de un Videojuego                               |
+| /list      |Consultar la lista de todos los videojuegos registrados                            |
 | /<vg_id>/AddCheat                       |Agregar un Cheat a un Videojuego                   |
 | /Cheatslist                      |Lista de todos lo cheats registrados                                            |
-| /<vg_id>/AddEaster"               |Agregar un Easter Egg a un videojueo                                    |
-| /vg-info/<vg_codigo>/Cheats         |Mostrar todos los cheats registrados en un Videojuego           |
+| /<cheat_id>/Cheatslist       |Consultar un cheat por su id          |
+| /<vg_id>/AddEaster               |Agregar un Easter Egg a un videojueo                                    |
+| /<easter_id>/Easterlist         |Mostrar todos los cheats registrados en un Videojuego           |
 | /Easterlist    |Consultar la lista de los Easter Eggs Registrados          |
 | /<vg_id>/AddOpinion"       |Agregar un una opinion a un videojuego          |
 | /Opinionlist       |Consultar la lista de las opiniones          |
+| /<opinion_id>/Opinionlist       |Consultar una opinion en especifico por medio de si id          |
 
 
 
@@ -585,3 +588,8 @@ El usuario podra subir una imagen al sistema.
 ```
 curl http://localhost:8080/vg_info/image/new/001 -X POST -H 'Content-Type: multipart/form-data' -F 'image_file=@/C/Users/alexi/Pictures/Fifa.jpg'
 ```
+# Documentacion para continuacion del proyecto
+Una vez finalizado el codigo se puede llegar a la conclusion que hay varia area de oportunidad asi como mas funciones que facilmente podrian agregarse al proyecto, entre ellos se encuentran los siguientes.
+
+- Funcion para editar Videojuegos, Cheats, Easter Eggs y Opiniones.
+- Funcion para eliminar Videojuegos, Cheats, Easter Eggs y Opiniones.
